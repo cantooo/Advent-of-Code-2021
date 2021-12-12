@@ -13,19 +13,10 @@ input.forEach((line, i) => {
 
 let decodedNumbers = [];
 input.forEach(line => {
-	/*
-	   ffff
-	  b    g
-	  b    g
-	   eeee
-	  d    c
-	  d    c
-	   aaaa
-	*/
 	line.signals.sort((a, b) => a.length - b.length);
 	line.signals.forEach((s, i) => {
 		line.signals[i] = s.split("").sort((a, b) => a.charCodeAt(0) - b.
-			charCodeAt(0)).join().replaceAll(",", "");
+			charCodeAt(0)).join("");
 	});
 	let display = {
 		top: "", topR: "", topL: "", center: "", bottomR: "",
@@ -103,29 +94,25 @@ input.forEach(line => {
 	// 2
 	numbers[line.signals.filter(s => s == (display.top + display.topR +
 		display.center + display.bottomL + display.bottom).split("")
-		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join()
-		.replaceAll(",", ""))[0]] = 2;
+		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join(""))[0]] = 2;
 
 	// 5
 	numbers[line.signals.filter(s => s == (display.top + display.topL +
 		display.center + display.bottomR + display.bottom).split("")
-		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join()
-		.replaceAll(",", ""))[0]] = 5;
+		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join(""))[0]] = 5;
 
 	// 3
 	numbers[line.signals.filter(s => s == (display.top + display.topR +
 		display.center + display.bottomR + display.bottom).split("")
-		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join()
-		.replaceAll(",", ""))[0]] = 3;
+		.sort((a, b) => a.charCodeAt(0) - b.charCodeAt(0)).join(""))[0]] = 3;
 
 	line.outputValues.forEach((s, i) => {
 		line.outputValues[i] = s.split("").sort((a, b) => a.charCodeAt(0) - b.
-			charCodeAt(0)).join().replaceAll(",", "");
+			charCodeAt(0)).join("");
 		line.outputValues[i] = numbers[line.outputValues[i]];
 	});
 
-	decodedNumbers.push(parseInt(line.outputValues.join()
-		.replaceAll(",", "")));
+	decodedNumbers.push(parseInt(line.outputValues.join("")));
 });
 
 let sum = 0;
