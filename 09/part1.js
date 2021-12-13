@@ -22,26 +22,39 @@ for (let i = 0; i < input.length; i++) {
 
 		if (point.left == undefined) {
 			if (point.top == undefined) {
-				if (point.thisPoint < point.right && point.thisPoint < point.bottom) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.right && point.thisPoint < point
+					.bottom) lowPoints.push(point.thisPoint);
 			} else if (point.bottom == undefined) {
-				if (point.thisPoint < point.right && point.thisPoint < point.top) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.right && point.thisPoint < point
+					.top) lowPoints.push(point.thisPoint);
 			} else {
-				if (point.thisPoint < point.right && point.thisPoint < point.top && point.thisPoint < point.bottom) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.right && point.thisPoint < point
+					.top && point.thisPoint < point.bottom) lowPoints
+						.push(point.thisPoint);
 			}
 		} else if (point.right == undefined) {
 			if (point.top == undefined) {
-				if (point.thisPoint < point.left && point.thisPoint < point.bottom) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.left && point.thisPoint < point
+					.bottom) lowPoints.push(point.thisPoint);
 			} else if (point.bottom == undefined) {
-				if (point.thisPoint < point.left && point.thisPoint < point.top) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.left && point.thisPoint < point
+					.top) lowPoints.push(point.thisPoint);
 			} else {
-				if (point.thisPoint < point.left && point.thisPoint < point.top && point.thisPoint < point.bottom) lowPoints.push(point.thisPoint);
+				if (point.thisPoint < point.left && point.thisPoint < point
+					.top && point.thisPoint < point.bottom) lowPoints
+						.push(point.thisPoint);
 			}
 		} else if (point.top == undefined) {
-			if (point.thisPoint < point.left && point.thisPoint < point.right && point.thisPoint < point.bottom) lowPoints.push(point.thisPoint);
+			if (point.thisPoint < point.left && point.thisPoint < point.right
+				&& point.thisPoint < point.bottom) lowPoints.push(point
+					.thisPoint);
 		} else if (point.bottom == undefined) {
-			if (point.thisPoint < point.left && point.thisPoint < point.right && point.thisPoint < point.top) lowPoints.push(point.thisPoint);
+			if (point.thisPoint < point.left && point.thisPoint < point.right
+				&& point.thisPoint < point.top) lowPoints.push(point.thisPoint);
 		} else {
-			if (point.thisPoint < point.left && point.thisPoint < point.right && point.thisPoint < point.bottom && point.thisPoint < point.top) lowPoints.push(point.thisPoint);
+			if (point.thisPoint < point.left && point.thisPoint < point.right
+				&& point.thisPoint < point.bottom && point.thisPoint < point
+					.top) lowPoints.push(point.thisPoint);
 		}
 	}
 }
